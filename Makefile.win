@@ -1,0 +1,57 @@
+# Project: Agusano
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe -D__DEBUG__
+CC   = gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Excepcion.o Graficos.o Celda.o Imagen.o Nivel.o Gusano.o Agujero.o Frecuencia.o Partida.o $(RES)
+LINKOBJ  = main.o Excepcion.o Graficos.o Celda.o Imagen.o Nivel.o Gusano.o Agujero.o Frecuencia.o Partida.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" -mwindows -lalleg  -g3 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = Agusano.exe
+CXXFLAGS = $(CXXINCS)   -g3
+CFLAGS = $(INCS)   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Agusano.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "Agusano.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Excepcion.o: Excepcion.cpp
+	$(CPP) -c Excepcion.cpp -o Excepcion.o $(CXXFLAGS)
+
+Graficos.o: Graficos.cpp
+	$(CPP) -c Graficos.cpp -o Graficos.o $(CXXFLAGS)
+
+Celda.o: Celda.cpp
+	$(CPP) -c Celda.cpp -o Celda.o $(CXXFLAGS)
+
+Imagen.o: Imagen.cpp
+	$(CPP) -c Imagen.cpp -o Imagen.o $(CXXFLAGS)
+
+Nivel.o: Nivel.cpp
+	$(CPP) -c Nivel.cpp -o Nivel.o $(CXXFLAGS)
+
+Gusano.o: Gusano.cpp
+	$(CPP) -c Gusano.cpp -o Gusano.o $(CXXFLAGS)
+
+Agujero.o: Agujero.cpp
+	$(CPP) -c Agujero.cpp -o Agujero.o $(CXXFLAGS)
+
+Frecuencia.o: Frecuencia.cpp
+	$(CPP) -c Frecuencia.cpp -o Frecuencia.o $(CXXFLAGS)
+
+Partida.o: Partida.cpp
+	$(CPP) -c Partida.cpp -o Partida.o $(CXXFLAGS)
